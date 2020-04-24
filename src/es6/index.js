@@ -95,3 +95,37 @@ helloPromesa()
     .then(response => console.log(response))
     .then(() => console.log('hola'))
     .catch(error => console.log(error))
+
+// Class
+class calculadora {
+    constructor() {
+        this.valueA = 0,
+            this.valueB = 0
+    }
+    suma(valueA, valueB) {
+        this.valueA = valueA
+        this.valueB = valueB
+        return this.valueA + this.valueB
+    }
+}
+const calc = new calculadora
+console.log(calc.suma(2, 8))
+
+// Module
+import { hello } from './module'
+hello()
+
+//Generators
+function* helloWord() {
+    if (true) {
+        yield 'Hello, '
+    }
+    if (true) {
+        yield 'World'
+    }
+}
+
+const generators = helloWord();
+console.log(generators.next().value)
+console.log(generators.next().value)
+console.log(generators.next().value)
