@@ -26,3 +26,27 @@ const obj = {
     name: 'oscar',
 }
 console.log(obj)
+
+// Async Await
+const helloWorld = () => {
+    return new Promise((resolver, reject) => {
+        (true) ?
+        setTimeout(() => resolver('Hello World'), 3000): reject(new Error('Test Error'))
+    })
+}
+const helloAsync = async() => {
+    const hello = await helloWorld();
+    console.log(hello)
+}
+
+helloAsync()
+
+const anotherFunction = async() => {
+    try {
+        const hello = await helloWorld()
+        console.log(hello)
+    } catch (error) {
+        console.log(error)
+    }
+}
+anotherFunction();
