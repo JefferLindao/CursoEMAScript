@@ -44,6 +44,7 @@ let team2 = ['Valeria', 'Maria', 'Fiorella']
 let education = ['David', ...team1, ...team2]
 console.log(education)
 
+// let var const
 {
     var globalVar = 'variable global'
 }
@@ -53,3 +54,44 @@ console.log(education)
     console.log(global1)
 }
 console.log(globalVar)
+
+// Parámetros en objetos
+let name = 'Jefferson'
+let age = 27
+obj = { name: name, age: age }
+obj1 = { name, age }
+console.log(obj)
+console.log(obj1)
+
+//Arrow Function
+const names = [
+    { name: 'Fiorella', age: 25 },
+    { name: 'Jefferson', age: 27 }
+]
+let listOfName = names.map(function(item) {
+    console.log(item.name)
+})
+let listOfName1 = names.map(item => console.log(item.name))
+    /* const listOfName2 = (name, age, country) => {
+        ...
+    }
+    const listOfName3 = name => {
+        ...
+    }
+    const listOfName4 = num => num * num */
+
+// Promesas
+const helloPromesa = () => {
+    return new Promise((resolve, reject) => {
+        if (true) {
+            resolve('Hey!')
+        } else {
+            reject('Ups!!')
+        }
+    })
+}
+
+helloPromesa()
+    .then(response => console.log(response))
+    .then(() => console.log('hola'))
+    .catch(error => console.log(error))
